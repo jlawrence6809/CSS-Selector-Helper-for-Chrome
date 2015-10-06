@@ -1,0 +1,36 @@
+<html>
+	<style>
+		[unselectable] {
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    user-select: none;
+		}
+		.mx-button input {
+		    display: none;
+		}
+		.mx-button label {
+		    background: #ccc;
+		    border: 1px solid #888;
+		    color: #000;
+		    padding: 1px 1px;
+		    font-size:100%;
+		}
+		.mx-button label:hover {
+		    background: #ddd;
+		}
+		.mx-button label:active,
+		.mx-button input:focus + label {
+		    background: #aaa;
+		}
+		.mx-button input:checked + label {
+		    background: #FFFFFF;
+		}
+	</style>
+  	<head>
+  		<script src="jquery-1.11.0.js"></script>
+		<script src="panelBackground.js"></script>
+	</head>
+	<body>
+		<a>Show CSS class elements by right clicking and hitting "Selector Help" in the context menu! :)</a>
+	</body>
+</html>

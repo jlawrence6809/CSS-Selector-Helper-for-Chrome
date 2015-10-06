@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+	<style>
+		[unselectable] {
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    user-select: none;
+		}
+		.toggle-button input {
+		    display: none;
+		}
+		.toggle-button label {
+		    background: #ccc;
+		    border: 1px solid #888;
+		    color: #000;
+		    padding: 1px 1px;
+		    font-size: 90%;
+		    display: inline-block;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    max-width: 150px;
+		    margin-bottom: -3px;
+		}
+		.toggle-button label:hover {
+		    background: #ddd;
+		    /*white-space: normal;*/
+		    /*overflow: visible;*/
+		    /*text-overflow: none;*/
+		    max-width: none;
+		    /*word-wrap: break-word;*/
+		}
+		.toggle-button label:active,
+		.toggle-button input:focus + label {
+		    background: #aaa;
+		}
+		.toggle-button input:checked + label {
+		    background: #FFFFFF;
+		}
+		.toggle-button input:checked + label.notted {
+		    background: #FF9999;
+		}
+		/*.footer {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 9999;
+			width: 100%;
+			height: 50px;
+			background-color: #00a087;
+		}*/
+	</style>
+  	<head>
+  		<script src="jquery-1.11.0.js"></script>
+  		<script src="evalHelpers.js"></script>
+		<script src="sideBarBackground.js"></script>
+	</head>
+	<body>
+		<div id="buttonLoc" class="body">
+			<tr>
+				<td>Show CSS class elements by right clicking and hitting "Selector Help" in the context menu! :)</td>
+			</tr>
+		</div>
+		<nav class="footer">
+			<div>
+				<button type="button" id="lastMatch">Prev</button>
+				<a id="curMatch">-</a>
+				<a>/</a>
+				<a id="numMatches">0</a>
+				<button type="button" id="nextMatch">Next</button>
+				<input type="checkbox" id="onlyVis">Only Visible</input>
+			</div>
+			<div>
+				<button type="button" id="getSelectorsButton">Get Selectors</button>
+				<button type="button" id="copySel">Selector to Clipboard</button>
+			</div>
+			<div>
+				<tr>
+					<td>Hold the ctrl, alt, meta, or shift key to 'not' the selector.</td>
+				</tr>
+			</div>
+		</nav>
+	</body>
+</html>
