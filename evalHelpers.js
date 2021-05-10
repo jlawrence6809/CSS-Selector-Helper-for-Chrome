@@ -1,5 +1,5 @@
 // The function below is executed in the context of the inspected page!!!!!!
-//CAREFUL about comments!!!
+// CAREFUL about comments!!!
 
 function getAttributesFromElems() {
   function isBlank(o){
