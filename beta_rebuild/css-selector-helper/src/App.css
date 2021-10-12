@@ -1,0 +1,23 @@
+body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.App {
+  font-size: calc(10px + 2vmin);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dark-theme {
+  background-color: #282c34;
+  color: white;
+}

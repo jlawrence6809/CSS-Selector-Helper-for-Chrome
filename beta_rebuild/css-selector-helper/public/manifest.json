@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "CSS Selector Helper",
+  "description": "Dev Tools sidebar that aids finding unique CSS selectors for Selenium WebDriver tests.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoyUSrNiwCi+AiMexv4YruM+sxVy6SUIlmpNrZjjLNFuzDbdWBH3C6etj/rkv5Nvz2tlhVtliukxEaaA6vRrDeig1sxIyXNg5csIpKxV1gEoDWMbuMKVfCt9MityjWWADY56LN4hG22B5YdDwDq0Mx2ty93YxVfSgrxma5HtGH1q+MhgFsVcOB3MLM17lwNTZ6e6J8BXOWK0oOs5idxZBVhSxm6jz2/lt7ISVSkWF4VKZCumxJQJ3WxyiQ+iI9c8KJ4IGPjuz7nNYDQPVSGwf3KQvrFvr5tYOcIE9jG1XaitweHAPymAzoUAUMKTq7qm2Z/UJ7EHdtyt0hm+A3sx1mQIDAQAB",
+  "version": "2.0.0",
+  "devtools_page": "devtools.html",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup"
+  },
+  "content_security_policy": {
+    "devtools_page": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  },
+  "permissions": [ "tabs", "storage" ],
+  "host_permissions": ["*://*/*"]
+}

@@ -1,0 +1,48 @@
+.settingsBody {
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.helpText {
+  font-size: medium;
+  font-style: italic;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox input {
+  width: 20px;
+  height: 20px;
+}
+
+.customTagFilters textarea {
+  resize: vertical;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: scroll;
+}
+
+.divider {
+  background-color: darkgray;
+}
+
+.divider.narrow {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.divider.dark-theme {
+  background-color: navajowhite;
+}
+.closeButton {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 32px;
+}
