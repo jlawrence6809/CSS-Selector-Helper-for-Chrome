@@ -91,12 +91,12 @@ export default class ChromeExtensionApi {
   }
 
   async copyTextToClipboard(text: String): Promise<CopyResult> {
+    await this.runInInspectedWindow(`window.copy("${text}")`);
     let res = await this.runInInspectedWindow('(function(){return window.copy + ""}())');
-    if (res !== 'function copy(value) { [Command Line API] }') {
+    if (res.indexOf("[Command Line API]") < 0 && res.indexOf("[native code]") < 0 ) {
       console.error('Copy function overridden!', res);
       return Promise.resolve(CopyResult.FAIL);
     }
-    await this.runInInspectedWindow(`window.copy("${text}")`);
     return Promise.resolve(CopyResult.SUCCESS);
   }
 

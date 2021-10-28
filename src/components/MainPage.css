@@ -16,7 +16,6 @@
 }
 
 .ahButtonWrapper {
-  height: 30px;
   margin-top: 3px;
   margin-bottom: 3px;
   display: flex;
@@ -30,6 +29,8 @@
   text-overflow: ellipsis;
   max-width: 150px;
   transition: max-width 0s 200ms;
+  font-size: small;
+  height: fit-content;
 }
 
 .attributeButton:focus {
@@ -71,10 +72,7 @@
 .ahWrapper {
   flex: 1;
   overflow: auto;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  padding-bottom: 16px;
 }
 .stickyFooter {
   max-height: 33%;

@@ -13,4 +13,3 @@ export const PlusDarkTheme = (classString: string) => {
     const theme = useTheme();
     return classString + (theme === "dark" ? ' dark-theme' : '');
 }
-

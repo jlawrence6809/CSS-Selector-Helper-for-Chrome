@@ -7,7 +7,7 @@ import Settings, { Divider, SettingsButton } from './Settings';
 import { MatchState, StoreContext } from '../state/Store';
 import { AttributeButtonClickAction, ClickCopySelectorToClipboardAction, ClickGetSelectorsAction, ClickNextAction, ClickPrevAction, ToggleVisibilityClickAction } from '../state/Actions';
 import { buildSelector, getQuerySelectorString } from '../helpers/Helpers';
-import { useTheme } from './Theme';
+import { PlusDarkTheme, useTheme } from './Theme';
   
 export const MainPage = () => {
     const {state, dispatch} = useContext(StoreContext);
@@ -70,7 +70,7 @@ const PrimaryPage = () => {
   );
 
   return (
-    <div className="primaryPage">
+    <div className={PlusDarkTheme("primaryPage")}>
       <div className="ahWrapper">{AttributesHierarchyComponent(state.attributesHierarchies)}</div>
       <div className="stickyFooter">
         <Divider narrow/>

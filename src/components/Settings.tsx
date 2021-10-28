@@ -48,12 +48,12 @@ const Settings = () => {
         />
         <Divider />
         <div>
-          <select onChange={(e) => dispatch(new ToggleDarkModeClickAction(e.target.value as ThemeMode))}>
+          <select value={state.themeMode} onChange={(e) => dispatch(new ToggleDarkModeClickAction(e.target.value as ThemeMode))}>
             <option value="system">{state.localization.SETTINGS_MODE_SYSTEM}</option>
             <option value="light">{state.localization.SETTINGS_MODE_LIGHT}</option>
             <option value="dark">{state.localization.SETTINGS_MODE_DARK}</option>
           </select>
-          <label className="mb-0 ml-2">Dark mode</label>
+          <label className="mb-0 ml-2">Theme</label>
         </div>
         <Divider />
         <div className="customTagFilters mt-2">
