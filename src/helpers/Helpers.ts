@@ -7,7 +7,7 @@ export function compareAttributesForSort(a: Attribute, b: Attribute): number {
     return a.value > b.value ? 1 : -1;
   }
   const getOrder = (type: AttributeType | string) => {
-    switch(type) {
+    switch (type) {
       case AttributeType.TagName:
         return 3;
       case AttributeType.Id:
@@ -25,33 +25,56 @@ export function compareAttributesForSort(a: Attribute, b: Attribute): number {
   }
   return orderB - orderA;
 }
- 
+
 export function buildSelector(attribute: Attribute): string {
-  switch(attribute.name){
+  switch (attribute.name) {
     case AttributeType.TagName:
       return attribute.value;
     case AttributeType.Id:
-      return '#' + attribute.value;
+      return "#" + attribute.value;
     case AttributeType.Class:
-      return '.' + attribute.value;
+      return "." + attribute.value;
   }
   return "[" + attribute.name + "='" + attribute.value + "']";
 }
 
 export function getQuerySelectorString(selectors: QuerySelectorState): string {
-  return selectors.filter(arr => !!arr)
-      .map(rowSelectors => rowSelectors.join(''))
-      .filter(sel => !!sel)
-      .join(' ');
+  return selectors
+    .filter((arr) => !!arr)
+    .map((rowSelectors) => rowSelectors.join(""))
+    .filter((sel) => !!sel)
+    .join(" ");
 }
 
 export function testCustomTagFilters(customTagFilters: string): string | null {
-  const tagFilters = customTagFilters?.split('\n')
-      ?.filter(s => s !== '');
+  const tagFilters = customTagFilters?.split("\n")?.filter((s) => s !== "");
   try {
-      tagFilters.forEach(f => RegExp(f));
-  } catch(e) {
-      return e.message;
+    tagFilters.forEach((f) => RegExp(f));
+  } catch (e) {
+    return e.message;
   }
   return null;
+}
+
+export function copyToClipboard(text: string) {
+  const el = document.createElement("textarea");
+  el.value = text;
+  document.body.appendChild(el);
+  el.select();
+
+  if (document.execCommand) {
+    document.execCommand("copy");
+    document.body.removeChild(el);
+
+    return true;
+  } else if ((el as any).copyText) {
+    (el as any).copyText();
+    document.body.removeChild(el);
+
+    return true;
+  } else {
+    document.body.removeChild(el);
+    alert("Copy does not supported");
+    return false;
+  }
 }
