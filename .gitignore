@@ -1,6 +1,7 @@
 node_modules
 dist
 build
+build.zip
 dist.zip
 .DS_Store
 .vscode
