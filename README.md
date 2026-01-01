@@ -76,10 +76,10 @@ npm run watch
 
 ## Tech Stack
 
-- React 17 + TypeScript
+- React 18 + TypeScript
 - Bootstrap 4 / React-Bootstrap
 - Chrome Extensions Manifest V3
-- Create React App (build tooling)
+- Vite (build tooling)
 
 ## License
 
