@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  test: {
+    environment: 'jsdom',
+  },
   build: {
     outDir: 'build',
     // Chrome extensions need predictable file names (no hashes)
