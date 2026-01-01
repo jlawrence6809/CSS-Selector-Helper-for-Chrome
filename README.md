@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# CSS Selector Helper for Chrome
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Chrome DevTools extension that helps you build unique CSS selectors for web elements. Particularly useful for writing Selenium WebDriver tests or web scraping.
 
-## Available Scripts
+![Dark Mode](img2.jpg)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Element Hierarchy Display**: Shows all attributes (tag names, IDs, classes, and custom attributes) for the selected element and its ancestors
+- **Interactive Selector Building**: Click attribute buttons to toggle them into your CSS selector
+- **Negation Support**: Hold `Ctrl`, `Alt`, `Meta`, or `Shift` while clicking to add `:not()` selectors
+- **Match Counter**: See how many elements match your current selector
+- **Match Navigation**: Cycle through matching elements with prev/next buttons
+- **Visibility Filter**: Toggle to show only visible elements (follows WebDriver visibility spec)
+- **Copy to Clipboard**: One-click copy of the built selector
+- **Theme Support**: Light, dark, and system theme modes
+- **Customizable Filters**: Hide noisy attributes with regex-based filters
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### From Source
 
-### `npm test`
+1. Clone this repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Build the extension:
+   ```bash
+   npm run build
+   ```
+4. Open Chrome and navigate to `chrome://extensions/`
+5. Enable "Developer mode" (toggle in top right)
+6. Click "Load unpacked" and select the `build` folder
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Development
 
-### `npm run build`
+To rebuild on file changes:
+```bash
+npm run watch
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Open Chrome DevTools (`F12` or `Cmd+Option+I`)
+2. Navigate to the **Elements** panel
+3. Find the **CSS Selector** sidebar pane (may need to expand the sidebar)
+4. Select any element in the DOM tree
+5. Click the **refresh** button to load attributes for the selected element
+6. Click attribute buttons to build your selector
+7. Use the **copy** button to copy the selector to clipboard
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tips
 
-### `npm run eject`
+- The selector displays at the bottom shows your current query
+- Match count updates as you build the selector (e.g., "2 / 13" means match 2 of 13)
+- Use the arrow buttons to navigate through matches and highlight them in the page
+- Open settings (gear icon) to:
+  - Toggle display of tag names, IDs, classes, or other attributes
+  - Add custom regex filters to hide noisy attributes
+  - Switch between light/dark themes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tech Stack
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React 17 + TypeScript
+- Bootstrap 4 / React-Bootstrap
+- Chrome Extensions Manifest V3
+- Create React App (build tooling)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT
