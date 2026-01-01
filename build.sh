@@ -1,12 +1,6 @@
 #!/bin/bash
 
-build() {
-    echo 'building react'
+echo 'Building with Vite...'
+npx vite build
 
-    export INLINE_RUNTIME_CHUNK=false
-    export GENERATE_SOURCEMAP=false
-
-    react-scripts build
-}
-
-build
+echo 'Done!'

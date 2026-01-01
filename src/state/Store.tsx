@@ -67,7 +67,7 @@ export const StoreContext = createContext<{state: IState; dispatch: DispatchMidd
 
 // inpiration for effects/reducer pattern I used: https://gist.github.com/astoilkov/013c513e33fe95fa8846348038d8fe42
 
-const Store: React.FC = ({children}) => {
+const Store: React.FC<{children: React.ReactNode}> = ({children}) => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
     const middleware = dispatchEffectsMiddleware(dispatch, state, chromeExtensionApi);
     return (<StoreContext.Provider value={{state, dispatch: middleware}}>{children}</StoreContext.Provider>);
