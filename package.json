@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "./build.sh",
-    "watch": "vite build --watch"
+    "watch": "vite build --watch",
+    "package": "./package.sh"
   },
   "dependencies": {
     "bootstrap": "^4.6.2",

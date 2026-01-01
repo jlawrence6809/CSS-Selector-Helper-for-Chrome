@@ -42,17 +42,13 @@ npm run watch
 
 ### Packaging for Chrome Web Store
 
-1. Build the extension:
+1. Run the package script:
    ```bash
-   npm run build
+   npm run package
    ```
-2. Create a zip file of the build folder:
-   ```bash
-   cd build && zip -r ../css-selector-helper.zip . && cd ..
-   ```
-3. Go to the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
-4. Go to the package page for the extension and upload the `.zip` file
-5. Submit for review
+2. Go to the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
+3. Go to the package page for the extension and upload `css-selector-helper.zip`
+4. Submit for review
 
 ## Usage
 
