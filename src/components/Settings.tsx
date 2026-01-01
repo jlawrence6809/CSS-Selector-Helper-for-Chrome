@@ -53,12 +53,12 @@ const Settings = () => {
             <option value="light">{state.localization.SETTINGS_MODE_LIGHT}</option>
             <option value="dark">{state.localization.SETTINGS_MODE_DARK}</option>
           </select>
-          <label className="mb-0 ml-2">Theme</label>
+          <label className="mb-0 ms-2">Theme</label>
         </div>
         <Divider />
         <div className="customTagFilters mt-2">
           <label>{state.localization.SETTINGS_CUSTOM_TAG_FILTERS}:</label>
-          <div className="ml-3 mr-2">
+          <div className="ms-3 me-2">
             <div className="helpText mb-1">{state.localization.SETTINGS_CUSTOM_TAG_FILTERS_HELP}</div>
             <textarea
               className="w-100"
@@ -69,7 +69,7 @@ const Settings = () => {
             ></textarea>
             <div>
               <button
-                className="iconButton mr-2"
+                className="iconButton me-2"
                 disabled={state.customTagFilters === state.customTagFiltersUnsaved}
                 onClick={() => dispatch(new CustomTagFilterCancelAction())}
               >
@@ -111,7 +111,7 @@ const Checkbox = ({checked, action, label}: CheckboxProps) => {
   const {dispatch} = useContext(StoreContext);
   return (
     <div className="checkbox">
-      <input type="checkbox" className="mr-2" checked={checked} onClick={() => dispatch(action)}></input>
+      <input type="checkbox" className="me-2" checked={checked} onClick={() => dispatch(action)}></input>
       <label className="mb-0">{label}</label>
     </div>
   );

@@ -73,7 +73,7 @@ npm run watch
 ## Tech Stack
 
 - React 18 + TypeScript
-- Bootstrap 4 / React-Bootstrap
+- Bootstrap 5
 - Chrome Extensions Manifest V3
 - Vite (build tooling)
 

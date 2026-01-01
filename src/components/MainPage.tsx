@@ -59,7 +59,7 @@ const PrimaryPage = () => {
 
   const refreshSelectorsButton = (
     <button
-      className="iconButton mr-1"
+      className="iconButton me-1"
       onClick={() => dispatch(new ClickGetSelectorsAction())}
       title={state.localization.REFRESH_BUTTON_TITLE}
     >
@@ -69,7 +69,7 @@ const PrimaryPage = () => {
 
   const visibleOnlyButton = (
     <button
-      className="iconButton mr-1"
+      className="iconButton me-1"
       onClick={() =>
         dispatch(
           new ToggleVisibilityClickAction(
@@ -161,7 +161,7 @@ const AttributeRow = (
   attributesHierarchy: AttributesHierarchy,
   rowIdx: number
 ) => (
-  <div className="attributeRow d-flex ml-2 mr-2" key={`ahRow-${rowIdx}`}>
+  <div className="attributeRow d-flex ms-2 me-2" key={`ahRow-${rowIdx}`}>
     {attributesHierarchy.map((attribute, buttonIdx) =>
       AttributeButton(attribute, rowIdx, buttonIdx)
     )}
@@ -191,7 +191,7 @@ const AttributeButton = (
   }
   return (
     <div
-      className="ahButtonWrapper mr-1"
+      className="ahButtonWrapper me-1"
       key={`ahButton-${rowIdx}-${buttonIdx}`}
     >
       <button
@@ -226,7 +226,7 @@ const MatchCyclerComponent = (matchState: MatchState) => {
   return (
     <div className="d-flex">
       <button
-        className="iconButton mr-1"
+        className="iconButton me-1"
         onClick={() =>
           dispatch(
             new ClickPrevAction(
@@ -240,7 +240,7 @@ const MatchCyclerComponent = (matchState: MatchState) => {
       >
         {leftArrowsIcon}
       </button>
-      <div className="totalMatchesCount mr-1">
+      <div className="totalMatchesCount me-1">
         {" "}
         {currentMatch} / {matchCount}{" "}
       </div>
@@ -277,7 +277,7 @@ const CurrentQueryDisplayComponent = (currentQuerySelector: string) => {
     currentQueryDisplayInput.select();
   };
   return (
-    <div className="pl-3 pr-3">
+    <div className="ps-3 pe-3">
       <textarea
         className="currentQueryDisplay w-100"
         value={currentQuerySelector}
