@@ -4,9 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "./build.sh",
-    "preview": "vite preview"
+    "watch": "vite build --watch"
   },
   "dependencies": {
     "bootstrap": "^4.6.2",
